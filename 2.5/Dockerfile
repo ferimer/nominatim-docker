@@ -1,10 +1,12 @@
 FROM ubuntu:trusty
-MAINTAINER winsent <pipetc@gmail.com>
+
+LABEL maintainer "winsent <pipetc@gmail.com>"
+LABEL maintainer-spain "Ferimer <devteam@ferimer.es>"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
-RUN locale-gen en_US.UTF-8
-RUN update-locale LANG=en_US.UTF-8
+RUN locale-gen es_ES.UTF-8
+RUN update-locale LANG=es_ES.UTF-8
 
 # Install packages http://wiki.openstreetmap.org/wiki/Nominatim/Installation#Ubuntu.2FDebian
 RUN apt-get -y update --fix-missing && \
