@@ -6,8 +6,8 @@
 
 # Supported tags and respective `Dockerfile` links #
 
+- [`3.0.1`, `3.0`, `latest`  (*3.0/Dockerfile*)](https://github.com/mediagis/nominatim-docker/tree/master/3.0)
 - [`2.5.0`, `2.5`, `latest`  (*2.5/Dockerfile*)](https://github.com/mediagis/nominatim-docker/tree/master/2.5)
-
 
 Run [http://wiki.openstreetmap.org/wiki/Nominatim](http://wiki.openstreetmap.org/wiki/Nominatim) in a docker container. Clones the current master and builds it. This is always the latest version, be cautious as it may be unstable.
 
@@ -61,12 +61,12 @@ Service will run on [http://localhost:8080/](http:/localhost:8080)
 
 Full documentation for Nominatim update available [here](https://github.com/openstreetmap/Nominatim/blob/master/docs/Import-and-Update.md#updates). For a list of other methods see the output of:
   ```
-  docker exec -it nominatim sudo -u nominatim ./src/utils/update.php --help
+  docker exec -it nominatim sudo -u nominatim ./src/build/utils/update.php --help
   ```
 
 The following command will keep your database constantly up to date:
   ```
-  docker exec -it nominatim sudo -u nominatim ./src/utils/update.php --import-osmosis-all --no-npi
+  docker exec -it nominatim sudo -u nominatim ./src/build/utils/update.php --import-osmosis-all
   ```
 If you have imported multiple country extracts and want to keep them
 up-to-date, have a look at the script in
