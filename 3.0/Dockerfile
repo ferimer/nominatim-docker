@@ -1,5 +1,6 @@
 FROM ubuntu:xenial
 MAINTAINER dorukozturk <dorukozturk@kitware.com>
+LABEL maintainer-spain "Ferimer <devteam@ferimer.es>"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
@@ -40,7 +41,7 @@ COPY local.php /app/src/build/settings/local.php
 COPY nominatim.conf /etc/apache2/sites-enabled/000-default.conf
 
 # Load initial data
-ARG PBF_DATA=http://download.geofabrik.de/europe/monaco-latest.osm.pbf
+ARG PBF_DATA=http://download.geofabrik.de/europe/spain-latest.osm.pbf
 RUN curl -L -f $PBF_DATA --create-dirs -o /app/src/data.osm.pbf
 RUN curl http://www.nominatim.org/data/country_grid.sql.gz > /app/src/data/country_osm_grid.sql.gz
 RUN service postgresql start && \
